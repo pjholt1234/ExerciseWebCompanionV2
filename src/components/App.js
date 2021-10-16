@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Accordion from './Accordion/Accordion';
+import ControlPanel from './ControlPanel/ControlPanel';
 import Sortable from './Sortable/Sortable';
 import './style.css';
 
@@ -51,6 +52,7 @@ const App = () =>{
                 </div>
                 <div className="ui row">
                     <div className="six wide column">
+                        <ControlPanel/>
                         <Sortable selectedPlan={selectedPlan}/>
                     </div>
                     <div className="four wide column">
