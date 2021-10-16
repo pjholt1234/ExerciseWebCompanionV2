@@ -1,5 +1,5 @@
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Card } from './Card';
 import update from 'immutability-helper';
 import "./Sortable.css";
@@ -7,13 +7,14 @@ const style = {
     width: 400,
 };
 
-const Container = () => {
-    {
-        const [cards, setCards] = useState([
-            { id: 0, workoutID: 0, workoutName: "Crunches", unit: 0, amount: 20, weight: 0 },
-            { id: 1, workoutID: 0, workoutName: "Crunches", unit: 0, amount: 15, weight: 0 },
-            { id: 2, workoutID: 0, workoutName: "Crunches", unit: 0, amount: 10, weight: 0 }
-        ]);
+const Container = (props) => {
+
+        const [cards, setCards] = useState([props.selectedPlan]);
+
+        useEffect(() => {
+            setCards(props.selectedPlan);
+        }, [props.selectedPlan]);
+
         const moveCard = useCallback((dragIndex, hoverIndex) => {
             const dragCard = cards[dragIndex];
             setCards(update(cards, {
@@ -31,7 +32,7 @@ const Container = () => {
         return (<>
 				<div style={style}>{cards.map((card, i) => renderCard(card, i))}</div>
 			</>);
-    }
 };
+
 
 export default Container;

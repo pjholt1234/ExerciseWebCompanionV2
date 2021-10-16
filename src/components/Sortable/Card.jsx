@@ -69,22 +69,24 @@ export const Card = ({ id, unit, workoutName, amount, weight, index, moveCard })
                 {`${workoutName} `}
             </div>
             <table>
-                <tr>
-                    <td className="heading">
-                        Weight:
-                    </td>
-                    <td className="total">
-                        {`${weight}kg`}   
-                    </td>
-                    <td> 
-                    </td>
-                    <td className="heading">
-                        {unit === 0 ? `Reps: ` : `Time: `}
-                    </td>
-                    <td className="total">
-                        {`${amount}${unit === 0 ? `` : `mins`}`}  
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td className="heading">
+                            Weight:
+                        </td>
+                        <td className="total">
+                            {`${weight}kg`}   
+                        </td>
+                        <td> 
+                        </td>
+                        <td className="heading">
+                            {unit === 0 ? `Reps: ` : `Time: `}
+                        </td>
+                        <td className="total">
+                            {`${amount}${unit === 0 ? `` : `mins`}`}  
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
 		</div>

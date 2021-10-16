@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Accordion from './Accordion/Accordion';
 import Sortable from './Sortable/Sortable';
 const plans =[
@@ -30,16 +30,25 @@ const plans =[
 ];
 
 
-function App(){
+
+const App = () =>{
+
+    const [selectedPlan, setSelectedPlan] = useState([
+        { workoutID: 0, workoutName: "Crunches", unit: 0, amount: 20, weight: 0 },
+        { workoutID: 0, workoutName: "Crunches", unit: 0, amount: 15, weight: 0 },
+        { workoutID: 0, workoutName: "Crunches", unit: 0, amount: 10, weight: 0 }
+    ]);
+
     return(
         <div className= "ui container">
             <div className="ui grid">
                 <div className="ui row">
                     <div className="eleven wide column">
-                        <Sortable plan={plans[0]}/>
+                        <Sortable selectedPlan={selectedPlan}/>
                     </div>
                     <div className="five wide column">
-                        <Accordion plans={plans}/>
+                        <Accordion onClick={(planID)=>setSelectedPlan((plans.find(o => o.planID === planID)).workouts)} plans={plans}>
+                        </Accordion>
                     </div>
                 </div>
             </div>

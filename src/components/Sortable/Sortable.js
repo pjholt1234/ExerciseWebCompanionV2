@@ -5,9 +5,9 @@ import Container from './Container';
 
 function Sortable(props){
     return(
-        <div>
+        <div className="ui segment">
             <DndProvider backend={HTML5Backend}>
-				<Container/>
+				<Container selectedPlan={props.selectedPlan}/>
 			</DndProvider>
         </div>
     )
