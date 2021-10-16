@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './Accordion/Accordion';
-
+import Sortable from './Sortable';
 const plans =[
     {   planID:1,
         planName: "Chest",
@@ -36,7 +36,7 @@ function App(){
             <div className="ui grid">
                 <div className="ui row">
                     <div className="eleven wide column">
-        
+                        <Sortable plan={plans[0]}/>
                     </div>
                     <div className="five wide column">
                         <Accordion plans={plans}/>
