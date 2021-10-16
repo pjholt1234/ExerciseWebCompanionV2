@@ -3,9 +3,7 @@ import '../Accordion.css';
 
 
 function Content(props){
-
     return(
-        
         <div>
             {props.workouts.map((item,i)=>(
                 <div className="content show">

@@ -32,9 +32,19 @@ const plans =[
 
 function App(){
     return(
-        <div>
-            <Accordion plans={plans}/>
-        </div>
+        <div className= "ui container">
+            <div className="ui grid">
+                <div className="ui row">
+                    <div className="eleven wide column">
+        
+                    </div>
+                    <div className="five wide column">
+                        <Accordion plans={plans}/>
+                    </div>
+                </div>
+            </div>
+            
+        </div>   
     )    
 }
 
