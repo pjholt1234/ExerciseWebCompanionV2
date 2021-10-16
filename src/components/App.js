@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './Accordion/Accordion';
-import Sortable from './Sortable';
+import Sortable from './Sortable/Sortable';
 const plans =[
     {   planID:1,
         planName: "Chest",

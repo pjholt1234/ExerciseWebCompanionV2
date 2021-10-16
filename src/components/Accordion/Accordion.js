@@ -4,8 +4,6 @@ import Content from './Content/Content';
 
 function Accordion(props){
 
-    console.log(props.plans);
-
     const toggle = (i) =>{
         if (selected === i){
             return setSelected(null);
