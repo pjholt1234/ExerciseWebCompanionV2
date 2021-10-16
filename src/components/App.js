@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Accordion from './Accordion/Accordion';
 import Sortable from './Sortable/Sortable';
+import './style.css';
+
 const plans =[
     {   planID:1,
         planName: "Chest",
@@ -40,20 +42,24 @@ const App = () =>{
     ]);
 
     return(
-        <div className= "ui container">
+        <div className="ui very padded segment">
             <div className="ui grid">
                 <div className="ui row">
-                    <div className="eleven wide column">
+                    <div className="sixteen wide column">
+                        <h1 className="heading ui header"><i class="fas fa-dumbbell"></i> Workout Planner</h1>
+                    </div>    
+                </div>
+                <div className="ui row">
+                    <div className="six wide column">
                         <Sortable selectedPlan={selectedPlan}/>
                     </div>
-                    <div className="five wide column">
+                    <div className="four wide column">
                         <Accordion onClick={(planID)=>setSelectedPlan((plans.find(o => o.planID === planID)).workouts)} plans={plans}>
                         </Accordion>
                     </div>
                 </div>
             </div>
-            
-        </div>   
+        </div>
     )    
 }
 

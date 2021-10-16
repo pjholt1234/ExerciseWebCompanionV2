@@ -9,3 +9,6 @@ td{
     font-style: italic;
     margin-right: 10px;
 }
+.sortable{
+    display: flex;
+}

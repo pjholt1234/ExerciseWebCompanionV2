@@ -21,7 +21,7 @@ const Accordion = (props) =>{
         <div className="wrapper">
             <div className="accordion">
                 {props.plans.map((item,i)=>(
-                    <div key={item.planID} className="ui raised padded text container segment item">
+                    <div key={item.planID} className="ui raised padded text segment item">
 
                         <div className="title" onClick={()=> toggle(i)}>
                             <h2 className="ui header">{item.planName}</h2>
